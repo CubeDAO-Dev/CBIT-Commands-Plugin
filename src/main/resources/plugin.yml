@@ -1,0 +1,36 @@
+name: cbit-payments-commands
+version: 1.0
+authors: [ScotsmanDev, 0xConflict]
+main: com.cubedao.cbitcommands.CBITPaymentsCommands
+api-version: 1.17
+depend: [CBITPaymentsAPI]
+
+commands:
+  createrequest:
+    description: Create a payment request from the server to a player.
+    usage: /createrequest
+    permission: cbitpaymentscommands.createrequest
+    default: op
+  listrequests:
+    description: List the currently pending payment requests
+    usage: /listrequests
+    permission: cbitpaymentscommands.listrequests
+    default: op
+  payplayer:
+    description: Send funds from the server wallet to a player
+    usage: /payplayer <player> <amount> <reason>
+    permission: cbitpaymentscommands.payplayer
+    default: op
+  simulatetx:
+    description: Simulate the completion of a transaction without an actual blockchain tx
+    usage: /simulatetx <id>
+    permission: cbitpaymentscommands.simulatetx
+    default: op
+  listnfts:
+    description: List the NFTs owned by the player.
+    usage: /listnfts
+    default: true
+  mintnft:
+    description: Mint an ERC1155 NFT with the given contract and id to the player running the command
+    usage: /mintnft <contract> <id>
+    default: op
